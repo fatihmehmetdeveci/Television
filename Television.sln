@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Television.Entities", "Tele
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Television.DataAccess", "Television.DataAccess\Television.DataAccess.csproj", "{A876FB1B-5AB1-4D81-AD68-87DC0801CEA6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Television.Business", "Television.Business\Television.Business.csproj", "{7720914B-F674-49E3-8026-E90F184CD013}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{A876FB1B-5AB1-4D81-AD68-87DC0801CEA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A876FB1B-5AB1-4D81-AD68-87DC0801CEA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A876FB1B-5AB1-4D81-AD68-87DC0801CEA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7720914B-F674-49E3-8026-E90F184CD013}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7720914B-F674-49E3-8026-E90F184CD013}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7720914B-F674-49E3-8026-E90F184CD013}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7720914B-F674-49E3-8026-E90F184CD013}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
