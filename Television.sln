@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Television.DataAccess", "Te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Television.Business", "Television.Business\Television.Business.csproj", "{7720914B-F674-49E3-8026-E90F184CD013}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Television.ConsoleApp", "Television.ConsoleApp\Television.ConsoleApp.csproj", "{FA4782F0-33F4-40EF-8EFD-2EE178E754FF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{7720914B-F674-49E3-8026-E90F184CD013}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7720914B-F674-49E3-8026-E90F184CD013}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7720914B-F674-49E3-8026-E90F184CD013}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA4782F0-33F4-40EF-8EFD-2EE178E754FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA4782F0-33F4-40EF-8EFD-2EE178E754FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA4782F0-33F4-40EF-8EFD-2EE178E754FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA4782F0-33F4-40EF-8EFD-2EE178E754FF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

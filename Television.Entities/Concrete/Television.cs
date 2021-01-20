@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 using Television.Entities.Abstract;
 
@@ -7,6 +8,7 @@ namespace Television.Entities.Concrete
 {
     public class Television :IEntity
     {
+        [Key]
         public int TvID { get; set; }
         public string Name { get; set; }
         public double Frequency { get; set; }

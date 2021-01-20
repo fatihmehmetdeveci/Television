@@ -13,12 +13,12 @@ namespace Television.DataAccess.Concrete.ADONET
     {
         public void Add(Entities.Concrete.Television entity)
         {
-            using (SqlCommand cmd = new SqlCommand("INSERT INTO Hotels (HotelName,FeePerNight,Stars) " +
-                "VALUES(@HotelName,@FeePerNight,@Stars)"))
+            using (SqlCommand cmd = new SqlCommand("INSERT INTO Televisions (Name,Frequency,IsNewsChannel) " +
+                "VALUES(@Name,@IsNewsChannel,@IsNewsChannel)"))
             {
-                cmd.Parameters.AddWithValue("HotelName", entity.HotelName);
-                cmd.Parameters.AddWithValue("FeePerNight", entity.FeePerNight);
-                cmd.Parameters.AddWithValue("Stars", entity.Stars);
+                cmd.Parameters.AddWithValue("@Name", entity.Name);
+                cmd.Parameters.AddWithValue("@Frequency", entity.Frequency);
+                cmd.Parameters.AddWithValue("@IsNewsChannel", entity.IsNewsChannel);
                 VTYS.SqlExecuteNonQuery(cmd);
             }
         }
@@ -26,89 +26,89 @@ namespace Television.DataAccess.Concrete.ADONET
         public void Delete(Entities.Concrete.Television entity)
         {
             using (SqlCommand cmd =
-                new SqlCommand("DELETE FROM Hotels WHERE HotelId = @HotelId"))
+                new SqlCommand("DELETE FROM Televisions WHERE TvID = @TvID"))
             {
-                cmd.Parameters.AddWithValue("HotelId", entity.HotelId);
+                cmd.Parameters.AddWithValue("@TvID", entity.TvID);
                 VTYS.SqlExecuteNonQuery(cmd);
             }
         }
 
         public Entities.Concrete.Television Get(Expression<Func<Entities.Concrete.Television, bool>> filter)
         {
-            List<Entities.Concrete.Television> hotelList = new List<Entities.Concrete.Television>();
-            SqlCommand cmd = new SqlCommand("Select * from Hotels");
+            List<Entities.Concrete.Television> televisionList = new List<Entities.Concrete.Television>();
+            SqlCommand cmd = new SqlCommand("Select * from Televisions");
 
             SqlDataReader reader = VTYS.SqlExecuteReader(cmd);
             while (reader.Read())
             {
-                Entities.Concrete.Television hotel = new Entities.Concrete.Television
+                Entities.Concrete.Television Television = new Entities.Concrete.Television
                 {
-                    HotelId = Convert.ToInt32(reader[0]),
-                    HotelName = reader[1].ToString(),
-                    Stars = Convert.ToInt32(reader[2]),
-                    FeePerNight = Convert.ToDecimal(reader[3].ToString())
+                    TvID = Convert.ToInt32(reader[0]),
+                    Name = reader[1].ToString(),
+                    Frequency = Convert.ToDouble(reader[1]),
+                    IsNewsChannel = Convert.ToBoolean(reader[3])
                 };
 
-                hotelList.Add(hotel);
+                televisionList.Add(Television);
             }
-            var list = hotelList.Where(filter.Compile()).ToList();
+            var list = televisionList.Where(filter.Compile()).ToList();
             return list[0] ;
         }
         public List<Entities.Concrete.Television> GetFilter(Expression<Func<Entities.Concrete.Television, bool>> filter)
         {
-            List<Entities.Concrete.Television> hotelList = new List<Entities.Concrete.Television>();
-            SqlCommand cmd = new SqlCommand("Select * from Hotels");
+            List<Entities.Concrete.Television> televisionList = new List<Entities.Concrete.Television>();
+            SqlCommand cmd = new SqlCommand("Select * from Televisions");
 
             SqlDataReader reader = VTYS.SqlExecuteReader(cmd);
             while (reader.Read())
             {
-                Entities.Concrete.Television hotel = new Entities.Concrete.Television
+                Entities.Concrete.Television television = new Entities.Concrete.Television
                 {
-                    HotelId = Convert.ToInt32(reader[0]),
-                    HotelName = reader[1].ToString(),
-                    Stars = Convert.ToInt32(reader[2]),
-                    FeePerNight = Convert.ToDecimal(reader[3].ToString())
+                    TvID = Convert.ToInt32(reader[0]),
+                    Name = reader[1].ToString(),
+                    Frequency = Convert.ToDouble(reader[2]),
+                    IsNewsChannel = Convert.ToBoolean(reader[3].ToString())
                 };
 
-                hotelList.Add(hotel);
+                televisionList.Add(television);
             }
-            var list = hotelList.Where(filter.Compile()).ToList();
-            return hotelList.Where(filter.Compile()).ToList(); ;
+            var list = televisionList.Where(filter.Compile()).ToList();
+            return televisionList.Where(filter.Compile()).ToList(); ;
         }
 
         public List<Entities.Concrete.Television> GetAll(Expression<Func<Entities.Concrete.Television, bool>> filter = null)
         {
 
-            List<Entities.Concrete.Television> hotelList = new List<Entities.Concrete.Television>();
-            SqlCommand cmd = new SqlCommand("Select * from Hotels");
+            List<Entities.Concrete.Television> televisionList = new List<Entities.Concrete.Television>();
+            SqlCommand cmd = new SqlCommand("Select * from Televisions");
 
             SqlDataReader reader = VTYS.SqlExecuteReader(cmd);
             while (reader.Read())
             {
-                Entities.Concrete.Television hotel = new Entities.Concrete.Television
+                Entities.Concrete.Television television = new Entities.Concrete.Television
                 {
-                    HotelId = Convert.ToInt32(reader[0]),
-                    HotelName = reader[1].ToString(),
-                    Stars = Convert.ToInt32(reader[2]),
-                    FeePerNight = Convert.ToDecimal(reader[3].ToString())
+                    TvID = Convert.ToInt32(reader[0]),
+                    Name = reader[1].ToString(),
+                    Frequency = Convert.ToInt32(reader[2]),
+                    IsNewsChannel = Convert.ToBoolean(reader[3].ToString())
                 };
 
-                hotelList.Add(hotel);
+                televisionList.Add(television);
             }
 
-            return filter == null ? hotelList : hotelList.Where(filter.Compile()).ToList();
+            return filter == null ? televisionList : televisionList.Where(filter.Compile()).ToList();
 
 
         }
 
         public void Update(Entities.Concrete.Television entity)
         {
-            using (SqlCommand cmd = new SqlCommand("UPDATE Hotels set HotelName = @HotelName, FeePerNight=@FeePerNight, Stars=@Stars WHERE HotelId = @HotelId"))
+            using (SqlCommand cmd = new SqlCommand("UPDATE Televisions set Name = @Name, IsNewsChannel=@IsNewsChannel, Frequency=@Frequency WHERE TvID = @TvID"))
             {
-                cmd.Parameters.AddWithValue("@HotelId", entity.HotelId);
-                cmd.Parameters.AddWithValue("@HotelName", entity.HotelName);
-                cmd.Parameters.AddWithValue("@FeePerNight", entity.FeePerNight);
-                cmd.Parameters.AddWithValue("@Stars", entity.Stars);
+                cmd.Parameters.AddWithValue("@TvID", entity.TvID);
+                cmd.Parameters.AddWithValue("@Name", entity.Name);
+                cmd.Parameters.AddWithValue("@IsNewsChannel", entity.IsNewsChannel);
+                cmd.Parameters.AddWithValue("@Frequency", entity.Frequency);
                 VTYS.SqlExecuteNonQuery(cmd);
             }
         }

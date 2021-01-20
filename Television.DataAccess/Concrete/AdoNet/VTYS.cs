@@ -7,7 +7,7 @@ namespace Television.DataAccess.Concrete.ADONET
 {
     public class VTYS
     {
-        private static string connString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=HotelDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        private static string connString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=TelevisionDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
         public static bool SqlExecuteNonQuery(SqlCommand cmd)
         {
             try

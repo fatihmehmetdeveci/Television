@@ -6,6 +6,7 @@ using Ninject.Modules;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Television.DataAccess.Concrete.ADONET;
 
 namespace Television.Business.CrossCuttingConcerns.DependencyResolvers.Ninject
 {
@@ -14,8 +15,8 @@ namespace Television.Business.CrossCuttingConcerns.DependencyResolvers.Ninject
         public override void Load()
         {
             Bind<ITelevisionService>().To<TelevisionManager>().InSingletonScope();
-           Bind<ITelevisionDal>().To<EfTelevisionDal>().InSingletonScope();
-            //Bind<ITelevisionDal>().To<EfTelevisionDal>().InSingletonScope();
+           //Bind<ITelevisionDal>().To<AdoTelevisionDal>().InSingletonScope();
+            Bind<ITelevisionDal>().To<EfTelevisionDal>().InSingletonScope();
         }
     }
 }

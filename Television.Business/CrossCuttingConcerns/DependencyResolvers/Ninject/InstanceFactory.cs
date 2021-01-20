@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace final_Hotel.Business.CrossCuttingConcerns.DependencyResolvers.Ninject
+namespace Television.Business.CrossCuttingConcerns.DependencyResolvers.Ninject
 {
     public class InstanceFactory
     {

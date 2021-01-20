@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Text;
 using Television.Business.Abstract;
-using Television.DataAccess.Abstract;
 
+using Television.DataAccess.Abstract;
+using Television.Entities.Concrete;
 namespace Television.Business.Concrete
 {
     public class TelevisionManager : ITelevisionService
