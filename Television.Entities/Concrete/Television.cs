@@ -27,7 +27,7 @@ namespace Television.Entities.Concrete
 
         public override string ToString()
         {
-            return $"{TvID,-5}{Name,-20}{Frequency,-10}{IsNewsChannel,-10}";
+            return $"{TvID,-10}{Name,-20}{Frequency,-20}{IsNewsChannel,-10}";
         }
     }
 }

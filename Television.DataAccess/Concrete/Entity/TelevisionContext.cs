@@ -14,5 +14,6 @@ namespace Television.DataAccess.Concrete.Entity
                 .UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=TelevisionDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         }
         public DbSet<Entities.Concrete.Television> Televisions { get; set; }
+        public DbSet<Entities.Concrete.post> posts { get; set; }
     }
 }

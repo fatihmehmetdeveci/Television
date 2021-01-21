@@ -14,8 +14,11 @@ namespace Television.Business.CrossCuttingConcerns.DependencyResolvers.Ninject
     {
         public override void Load()
         {
-            Bind<ITelevisionService>().To<TelevisionManager>().InSingletonScope();
+            Bind<IpostService>().To<postManager>().InSingletonScope();
            //Bind<ITelevisionDal>().To<AdoTelevisionDal>().InSingletonScope();
+            Bind<IpostDal>().To<EfpostDal>().InSingletonScope();
+            Bind<ITelevisionService>().To<TelevisionManager>().InSingletonScope();
+            //Bind<ITelevisionDal>().To<AdoTelevisionDal>().InSingletonScope();
             Bind<ITelevisionDal>().To<EfTelevisionDal>().InSingletonScope();
         }
     }
